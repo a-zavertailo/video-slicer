@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Demo</title>
+
+    <!-- npm modules dependencies-->
+    <link rel="stylesheet" href="./node_modules/videogular-themes-default/videogular.min.css">
+
+
+    <!-- cdn dependencies -->
+    <!-- <link rel="stylesheet" href="http://www.videogular.com/styles/themes/default/latest/videogular.css"> -->
+
+</head>
+<body>
+    <div class="wrapper" style="width: 600px; margin: 0 auto">
+
+        <div ng-controller="HomeCtrl as vm">
+            <h2 style="text-align: center">Fragment video</h2>
+            <p>Start time: <input type="text" ng-model="vm.startTime"></p>
+            <p>End time: <input type="text" ng-model="vm.endTime"></p>
+
+            <div video-slicer
+                 data-video-url="vm.url"
+                 data-video-start-time="vm.startTime"
+                 data-video-end-time="vm.endTime"></div>
+            <br>
+            <h2 style="text-align: center">Original video</h2>
+            <div video-slicer
+                 data-video-url="vm.url"
+                 data-video-start-time="0"
+                 data-video-end-time="149"></div>
+        </div>
+
+    </div>
+
+    <!-- npm modules dependencies-->
+    <!--<script src="node_modules/angular/angular.min.js"></script>-->
+    <!--<script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>-->
+
+    <!-- cdn dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.2/angular-sanitize.min.js"></script>
+
+
+    <script src="./videoSlicer/videogular.bundle.min.js"></script>
+    <script src="./videoSlicer/videoSlicer.js"></script>
+
+
+    <script>
+
+        angular.module('myApp', ['videoSlicer']);
+
+        angular.module('myApp').controller('HomeCtrl', [
+                function () {
+
+                    var vm = this;
+
+                    vm.url = 'http://www.html5videoplayer.net/videos/toystory.mp4';
+                    vm.startTime = 15;
+                    vm.endTime = 35;
+
+                }
+            ]
+        );
+
+
+    </script>
+</body>
+</html>

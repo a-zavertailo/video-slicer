@@ -1,0 +1,24 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "a-zavertailo",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-tinypng-compress": "^1.2.1",
+    "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-sanitize": "^1.6.2",
+    "videogular-themes-default": "^1.4.4"
+  }
+}
